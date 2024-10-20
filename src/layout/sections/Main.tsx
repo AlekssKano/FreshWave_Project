@@ -5,6 +5,7 @@ import {FlexWrapper} from "../../components/FlexWrapper";
 
 export const Main = () => {
     return (
+        <Styled_Main>
         <BackgroundWrapper>
             <FlexWrapper direction="column" align={'flex-start'} justify={'center'} text_align={'left'} gap={'40px'}>
 
@@ -20,14 +21,12 @@ export const Main = () => {
 
             </FlexWrapper>
         </BackgroundWrapper>
+        </Styled_Main>
     );
 };
 
-const Styled_Main = styled.div`
-    //display: flex;
-    //flex-direction: column; /* Устанавливаем вертикальное направление */
-    //align-items: flex-start; /* Центрирование элементов по горизонтали (опционально) */
-    //gap: 10px; /* Расстояние между элементами (опционально) */
+const Styled_Main = styled.section`
+
 `
 const BackgroundWrapper = styled.div`
     background-image: url(${backgroundPhoto});
