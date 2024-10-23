@@ -34,7 +34,8 @@ const StyledAboutUs = styled.section`
     display: flex;
     flex-direction: column;
     text-align: center;
-    
+    background-color: #95c1c1;
+
 `
 const Photo = styled.img`
 

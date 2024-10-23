@@ -5,6 +5,8 @@ import {OurService} from "./layout/sections/OurServices/OurService";
 import {Benefits} from "./layout/sections/benefits/Benefits";
 import {AboutUs} from "./layout/sections/AboutUs";
 import {Calculator} from "./layout/sections/Calculator";
+import {Contact} from "./layout/sections/contacts/Contact";
+import {Footer} from "./layout/footer/Footer";
 
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
             <Benefits/>
             <AboutUs/>
             <Calculator/>
+            <Contact/>
+            <Footer/>
         </div>
     );
 }
