@@ -32,6 +32,6 @@ const StyledPlusMinus=styled.div`
 
 `
 // `
-// const Title = styled.h3`
+// const Title = styles.h3`
 //     margin: 0;
 // `;

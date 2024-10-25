@@ -6,8 +6,8 @@ export const Logo = () => {
     return (
 
             <StyledLogo href=''>
-                <Icon iconId={'logo'} width={'100'} height={'100'} viewBox={'0 0 100 100'}/>
-                FreshWave Cleaning
+                <Icon iconId={'logo'} width={'80'} height={'80'} viewBox={'0 0 80 80'}/>
+                FreshWave  Cleaning
             </StyledLogo>
 
 

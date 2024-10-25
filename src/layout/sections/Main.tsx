@@ -2,25 +2,30 @@ import React from 'react';
 import styled from "styled-components";
 import backgroundPhoto from './../../assets/images/mainBlur.webp'
 import {FlexWrapper} from "../../components/FlexWrapper";
+import {Container} from "../../components/container/Container";
 
 export const Main = () => {
     return (
         <Styled_Main>
+            <Container>
+
+
         <BackgroundWrapper>
             <FlexWrapper direction="column" align={'flex-start'} justify={'center'} text_align={'left'} gap={'40px'}>
 
-                <h1>Professional Cleaning Services
+                <MainTitle>Professional Cleaning Services
                     in Adelaide
-                </h1>
-                <span>
+                </MainTitle>
+                <MainText>
                 Top-rated house cleaning service.
                 Happiness Guaranteed. If you're not satisfied, we'll come back and make it right, free of charge.
-            </span>
+            </MainText>
                 <button>Request a quote</button>
 
 
             </FlexWrapper>
         </BackgroundWrapper>
+            </Container>
         </Styled_Main>
     );
 };
@@ -42,3 +47,16 @@ const BackgroundWrapper = styled.div`
     padding-left: -25%; /* Смещает текст немного влево */
 
 `;
+const MainTitle=styled.h1`
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    color: #fff;
+    `
+
+const MainText=styled.span`
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    color: #fff;
+    `

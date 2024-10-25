@@ -26,7 +26,7 @@ export const Footer = () => {
                     {isModalOpen && <PrivacyPolicyModal closeModal={closeModal} />}
                 </LeftSection>
                 <MenuWrapper>
-                    <Menu />
+                    <Menu menuItems={['Home','About Us','Cleaning Service','Contact']}/>
                 </MenuWrapper>
             </FlexWrapper>
             <Copyright>© 2024 FreshWave Cleaning, All Rights Reserved.</Copyright>

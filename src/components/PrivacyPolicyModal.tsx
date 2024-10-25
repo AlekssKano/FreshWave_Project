@@ -73,7 +73,7 @@ export const PrivacyPolicyModal: React.FC<PrivacyPolicyModalProps> = ({ closeMod
                     <p>If you have any queries or complaints about our Privacy Policy, please contact us at:</p>
                     <p>
                         FreshWave Cleaning<br/>
-                        4/2 William Street, Athol Park, 5012<br/>
+                        William Street, Athol Park, 5012<br/>
                         Phone – 61 0490927593
                     </p>
                 </ModalBody>
