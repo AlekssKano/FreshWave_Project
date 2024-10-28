@@ -3,14 +3,16 @@ import styled from "styled-components";
 import backgroundPhoto from './../../assets/images/mainBlur.webp'
 import {FlexWrapper} from "../../components/FlexWrapper";
 import {Container} from "../../components/container/Container";
+import {Button} from "../../components/Button";
 
 export const Main = () => {
     return (
         <Styled_Main>
+            <BackgroundWrapper>
             <Container>
 
 
-        <BackgroundWrapper>
+<MainContainer>
             <FlexWrapper direction="column" align={'flex-start'} justify={'center'} text_align={'left'} gap={'40px'}>
 
                 <MainTitle>Professional Cleaning Services
@@ -20,12 +22,14 @@ export const Main = () => {
                 Top-rated house cleaning service.
                 Happiness Guaranteed. If you're not satisfied, we'll come back and make it right, free of charge.
             </MainText>
-                <button>Request a quote</button>
-
+                <Button width={'200px'} height={'50px'} fontSize={'20px'}>Request a quote</Button>
 
             </FlexWrapper>
-        </BackgroundWrapper>
+</MainContainer>
+
             </Container>
+            </BackgroundWrapper>
+
         </Styled_Main>
     );
 };
@@ -50,7 +54,7 @@ const BackgroundWrapper = styled.div`
 const MainTitle=styled.h1`
     font-family: 'Oswald', sans-serif;
     font-weight: 700;
-    font-size: 50px;
+    font-size: 58px;
     color: #fff;
     `
 
@@ -60,3 +64,7 @@ const MainText=styled.span`
     font-size: 28px;
     color: #fff;
     `
+const MainContainer=styled.div`
+    max-width: 820px;
+    max-height: 450px;
+`

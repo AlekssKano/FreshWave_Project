@@ -6,14 +6,16 @@ import moveCleaning from '../../../assets/images/move_in.webp'
 import {Service} from "./Service";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {SectionTitle} from "../../../components/SectionTitle";
+import {Container} from "../../../components/container/Container";
 export const OurService = () => {
     return (
         <OurServiceStyled>
-            <div>
+            <Container>
+            <SectionPlace>
             <SectionTitle>Our cleaning services</SectionTitle>
-            <span>Whether you're relocating, managing a vacation rental, or simply seeking a clean and comfortable home, we are here to assist you.</span>
-            </div>
-            <FlexWrapper direction={'row'} justify={'space-between'} >
+            <SectionText>Whether you're relocating, managing a vacation rental, or simply seeking a clean and comfortable home, we are here to assist you.</SectionText>
+            </SectionPlace>
+            <FlexWrapper direction={'wrap'} justify={'space-between'} >
             <Service title={'House Cleaning Services'}
                      description={'Weekly, Bi-weekly, monthly professional house cleaning service for your house or apartment.'}
                      src={houseCleaning}/>
@@ -24,7 +26,9 @@ export const OurService = () => {
                      description={'Whether you\'re moving into a new place or moving out of one, we\'ll be there to clean your space.'}
                      src={moveCleaning}/>
             </FlexWrapper>
+            </Container>
         </OurServiceStyled>
+
     );
 };
 
@@ -37,4 +41,22 @@ const OurServiceStyled = styled.section`
     text-align: center;
     background-color: #ade6d2;
 `
+const SectionPlace=styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 70px;
 
+`
+const SectionText=styled.span`
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #52525e;
+    width: 50%;
+    padding-top: 25px;
+
+`

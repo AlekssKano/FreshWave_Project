@@ -19,6 +19,9 @@ export const GlobalStyle = createGlobalStyle`
 a{
     text-decoration: none;
 }
+section{
+    margin: 80px 0;
+}
     ul{
         list-style: none;
     }
