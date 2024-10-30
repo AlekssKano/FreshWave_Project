@@ -13,7 +13,7 @@ export const Button = styled.button<ButtonProps>`
     height: ${({ height }) => height || "30px"};
     background-color:${theme.colors.accent};
     color:${theme.colors.secondaryText};
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: ${({ fontSize }) => fontSize || "14px"};
     margin: 10px;
 `

@@ -43,7 +43,7 @@ align-items: center;
 const BenefitTitle=styled.h3`
     font-family: "Oswald", sans-serif;
     font-weight: 500;
-    font-size: 32px;
+    font-size: 28px;
     letter-spacing: 0.1em;
     color: #fff;
     margin-left: 10px; /* Отступ между иконкой и заголовком */

@@ -9,9 +9,9 @@ export const CalculateItem = (props:CalculateItemProps) => {
         <StyledCalculateItem>
             {props.title}
             <StyledPlusMinus>
-            <div>+</div>
-            <div>0</div>
-            <div>-</div>
+            <PlusMinus>+</PlusMinus>
+            <Zero>0</Zero>
+            <PlusMinus>-</PlusMinus>
             </StyledPlusMinus>
 
         </StyledCalculateItem>
@@ -25,13 +25,28 @@ const StyledCalculateItem=styled.div`
     padding: 10px;
     width: 100%;                    /* Контейнер занимает всю ширину */
     border-bottom: 1px solid #ccc;  /* Линия для разделения строк */
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 0.14em;
+    color: #000;
     `
 const StyledPlusMinus=styled.div`
     display: flex;
     align-items: center;
 
 `
-// `
-// const Title = styles.h3`
-//     margin: 0;
-// `;
+
+const PlusMinus = styled.span`
+    border: 3px solid #51b9d9;
+    width: 40px;
+    height: 45px;
+    
+    padding-left: 2px;
+    padding-top: 6px;
+    `
+
+const Zero = styled.span`
+    padding: 20px;
+    `

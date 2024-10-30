@@ -8,7 +8,8 @@ export const Benefits = () => {
     return (
         <StyledBenefits>
             <SectionTitle>Our Services Bring Valuable Benefits</SectionTitle>
-            {/*<BenefitsList></BenefitsList>*/}
+            <BenefitsList>
+
             <FlexWrapper justify={'wrap'} align={'center'} gap={'40px'} >
                 <Benefit iconId={'eco'} title={'Eco-friendly'}
                          description={'We provide eco-friendly home cleaning services using proven products that are safe for your family, the environment, and all surfaces in your home.'}></Benefit>
@@ -17,6 +18,7 @@ export const Benefits = () => {
                 <Benefit iconId={'experienced'} title={'Experienced'}
                          description={'With 3 years of experience in the cleaning industry, we ensure that all this expertise is transferred to our teams through comprehensive in-house training.'}/>
             </FlexWrapper>
+            </BenefitsList>
         </StyledBenefits>
     );
 };
@@ -24,7 +26,7 @@ export const Benefits = () => {
 const StyledBenefits = styled.section`
     background-color: #9c82b8;
     //text-align: center;
-    height: 70vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Равномерно распределяем элементы */
@@ -37,5 +39,5 @@ const StyledBenefits = styled.section`
 
 
 const BenefitsList=styled.div`
-    //padding: 50px 0;
+    padding: 120px 0;
     `
