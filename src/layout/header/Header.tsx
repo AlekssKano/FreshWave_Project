@@ -13,7 +13,7 @@ export const Header = () => {
                 <FlexWrapper justify={'space-between'} align={'center'}>
             <Logo/>
             <Menu menuItems={['Home','About Us','Cleaning Service','Contact']}/>
-                    <Button>Book Now</Button>
+                    <Button width={'130px'} height={'35px'} >Book Now</Button>
                 </FlexWrapper>
             </Container>
         </Styled_Header>
@@ -22,10 +22,10 @@ export const Header = () => {
 
 const Styled_Header = styled.header`
     background-color: rgba(255, 255, 255, 0.6);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
+    //position: fixed;
+    //top: 0;
+    //left: 0;
+    //right: 0;
+    //z-index: 9999;
 
 `

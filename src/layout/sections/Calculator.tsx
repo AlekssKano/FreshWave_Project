@@ -38,6 +38,7 @@ export const Calculator = () => {
 const StyledCalculator = styled.section`
 min-height: 100vh;
     text-align: center;
+    
 
 `
 const ButtonContainer=styled.div`

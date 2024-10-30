@@ -8,5 +8,12 @@ export const theme={
         primaryText:'#3d8cc7',
         secondaryText:'#FFFFFF',
         sectionTitle:'#52525e'
+    },
+
+
+    media:{
+        tablet:'screen and (max-width: 830px)',
+        mobile:'screen and (max-width: 576px)',
+
     }
 }

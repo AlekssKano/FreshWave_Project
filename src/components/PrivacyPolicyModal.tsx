@@ -1,12 +1,28 @@
 import styled from "styled-components";
+import React, {useEffect, useRef} from "react";
 type PrivacyPolicyModalProps ={
     closeModal: () => void;  // Явно указываем тип функции
 }
 
 export const PrivacyPolicyModal: React.FC<PrivacyPolicyModalProps> = ({ closeModal }) => {
+    const modalRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+                closeModal(); // Закрываем модальное окно при клике вне его
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [closeModal]);
+
     return (
         <ModalOverlay>
-            <ModalContent>
+            <ModalContent  ref={modalRef}>
                 <CloseButton onClick={closeModal}>&times;</CloseButton>
                 <ModalBody>
                     <h2>Privacy Policy</h2>
