@@ -4,7 +4,7 @@ import {Button} from "../Button";
 import {theme} from "../../styles/Theme";
 
 
-export const Menu = (props: { menuItems: Array<string>, color?:string }) => {
+export const MenuHeader = (props: { menuItems: Array<string>, color?:string }) => {
     return (
         <Styled_Menu>
             <ul>
@@ -28,7 +28,13 @@ const Styled_Menu = styled.nav`
         justify-content: center;
         margin-right: 15px;
 
-    }`
+    }
+@media ${theme.media.tablet}{
+    
+    display: none;
+}
+
+`
 
 const ListItem=styled.li`
 position: relative;

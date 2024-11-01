@@ -15,7 +15,7 @@ export const OurService = () => {
             <SectionTitle>Our cleaning services</SectionTitle>
             <SectionText>Whether you're relocating, managing a vacation rental, or simply seeking a clean and comfortable home, we are here to assist you.</SectionText>
             </SectionPlace>
-            <FlexWrapper direction={'wrap'} justify={'space-between'} >
+            <FlexWrapper wrap={'wrap'} justify={'space-between'} >
             <Service title={'House Cleaning Services'}
                      description={'Weekly, Bi-weekly, monthly professional house cleaning service for your house or apartment.'}
                      src={houseCleaning}/>

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Menu } from "../../components/menu/Menu";
+import { MenuHeader } from "../../components/menu/MenuHeader";
 import styled from "styled-components";
 import { Button } from "../../components/Button";
 import { PrivacyPolicyModal } from "../../components/PrivacyPolicyModal";
 import { FlexWrapper } from "../../components/FlexWrapper";
 import {Container} from "../../components/container/Container";
 import {theme} from "../../styles/Theme";
+import {MenuFooter} from "../../components/menu/MenuFooter";
 
 export const Footer = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -29,7 +30,7 @@ export const Footer = () => {
                     {isModalOpen && <PrivacyPolicyModal closeModal={closeModal} />}
                 </LeftSection>
                 <MenuWrapper>
-                    <Menu menuItems={['Home','About Us','Cleaning Service','Contact']} color={'white'}/>
+                    <MenuFooter menuItems={['Home','About Us','Cleaning Service','Contact']} color={'white'}/>
                 </MenuWrapper>
             </FlexWrapper>
             <Copyright>© 2024 FreshWave Cleaning, All Rights Reserved.</Copyright>

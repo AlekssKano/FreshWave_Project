@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from "styled-components";
 import {Logo} from "../../components/logo/logo";
-import {Menu} from "../../components/menu/Menu";
+import {MenuHeader} from "../../components/menu/MenuHeader";
 import {Container} from "../../components/container/Container";
 import {FlexWrapper} from "../../components/FlexWrapper";
 import {Button} from "../../components/Button";
+import {MenuMobile} from "../../components/menu/MenuMobile";
 
 export const Header = () => {
     return (
@@ -12,7 +13,8 @@ export const Header = () => {
             <Container>
                 <FlexWrapper justify={'space-between'} align={'center'}>
             <Logo/>
-            <Menu menuItems={['Home','About Us','Cleaning Service','Contact']}/>
+            <MenuHeader menuItems={['Home','About Us','Cleaning Service','Contact']}/>
+                    <MenuMobile menuItems={['Home','About Us','Cleaning Service','Contact']}/>
                     <Button width={'130px'} height={'35px'} >Book Now</Button>
                 </FlexWrapper>
             </Container>

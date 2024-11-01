@@ -10,7 +10,7 @@ export const Benefits = () => {
             <SectionTitle>Our Services Bring Valuable Benefits</SectionTitle>
             <BenefitsList>
 
-            <FlexWrapper justify={'wrap'} align={'center'} gap={'40px'} >
+            <FlexWrapper wrap={'wrap'} align={'center'} gap={'40px'} >
                 <Benefit iconId={'eco'} title={'Eco-friendly'}
                          description={'We provide eco-friendly home cleaning services using proven products that are safe for your family, the environment, and all surfaces in your home.'}></Benefit>
                 <Benefit iconId={'safe'} title={'Safe'}
@@ -26,7 +26,7 @@ export const Benefits = () => {
 const StyledBenefits = styled.section`
     background-color: #9c82b8;
     //text-align: center;
-    height: 80vh;
+    //height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Равномерно распределяем элементы */

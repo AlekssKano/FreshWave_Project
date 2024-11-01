@@ -9,22 +9,28 @@ type ServicePropsType={
 }
 export const Service = (props:ServicePropsType) => {
     return (
+        <StyledService>
         <FlexWrapper direction={'column'} align={'center'}>
             <Photo src={props.src}/>
 <ServiceTitle>{props.title}</ServiceTitle>
             <ServiceDescription>{props.description}</ServiceDescription>
 
         </FlexWrapper>
+        </StyledService>
     );
 };
+const StyledService=styled.div`
+    width: 30%
+    
 
+`
 const Photo = styled.img`
-max-width: 350px;
-max-height: 320px; //исправь потом размеры
+    width: 100%;
+    height: auto; // Сохранение соотношения сторон
+    max-width: 350px;
+    max-height: 320px;
     border-radius: 15px;
-    //width: 100%;
-    //height: max-content;
-    object-fit: contain;
+    object-fit: cover;
 
 `
 const ServiceTitle = styled.h4`
@@ -33,6 +39,7 @@ const ServiceTitle = styled.h4`
     font-size: 20px;
     letter-spacing: 0.2em;
     color: #000;
+    
     
     padding-top: 50px;
     padding-bottom: 25px;
