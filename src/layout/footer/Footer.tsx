@@ -7,6 +7,7 @@ import { FlexWrapper } from "../../components/FlexWrapper";
 import {Container} from "../../components/container/Container";
 import {theme} from "../../styles/Theme";
 import {MenuFooter} from "../../components/menu/MenuFooter";
+import {font} from "../../styles/Common";
 
 export const Footer = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -22,7 +23,7 @@ export const Footer = () => {
     return (
         <StyledFooter>
             <Container>
-            <FlexWrapper direction="row" justify="space-between">
+            <FooterWrapper>
                 <LeftSection>
                     <Name>FreshWave Cleaning</Name>
                     <PhoneNumber>Ph: 04 90 927593</PhoneNumber>
@@ -32,7 +33,7 @@ export const Footer = () => {
                 <MenuWrapper>
                     <MenuFooter menuItems={['Home','About Us','Cleaning Service','Contact']} color={'white'}/>
                 </MenuWrapper>
-            </FlexWrapper>
+            </FooterWrapper>
             <Copyright>© 2024 FreshWave Cleaning, All Rights Reserved.</Copyright>
             </Container>
         </StyledFooter>
@@ -51,25 +52,43 @@ const LeftSection = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start; /* Выравнивание элементов по левому краю */
-    gap: 10px; /* Расстояние между элементами */
+    gap: 20px; /* Расстояние между элементами */
+    @media ${theme.media.tablet} {
+        align-items: center;
+
+    }
 `;
 
 const Name = styled.div`
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 20px;
+    //font-family: 'Montserrat', sans-serif;
+    //font-weight: 600;
+    //font-size: 20px;
     text-align: center;
     padding-left: 14px;
-    color:${theme.colors.secondaryText}
+    //color:${theme.colors.secondaryText}
+    ${font({
+        family: '"Montserrat", sans-serif',
+        weight: 600,
+        color:'white',
+        Fmin: 16,
+        Fmax: 20,
+    })}
 `;
 
 const PhoneNumber = styled.div`
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 20px;
+    //font-family: 'Montserrat', sans-serif;
+    //font-weight: 600;
+    //font-size: 20px;
     text-align: center;
     padding-left: 14px;
-    color:${theme.colors.secondaryText}
+    // color:$ {theme.colors.secondaryText}
+    ${font({
+        family: '"Montserrat", sans-serif',
+        weight: 600,
+        color:'white',
+        Fmin: 16,
+        Fmax: 20,
+    })}
 
 `;
 
@@ -79,7 +98,14 @@ const MenuWrapper = styled.div`
     align-items: center;
     flex-grow: 20;
 padding-right: 180px;
+    @media ${theme.media.tablet} {
+    flex-grow: 0;
+    padding-right: 0;
+        margin-top: 36px;
+        margin-bottom: 11px;
+}
     color:${theme.colors.secondaryText}
+
 `;
 
 const Copyright = styled.small`
@@ -89,3 +115,17 @@ const Copyright = styled.small`
     font-size: 12px;
     color: rgba(255, 255, 255, 0.5);
 `;
+ const FooterWrapper=styled.div`
+ 
+  display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    text-align:  center;
+     
+     @media ${theme.media.tablet} {
+         flex-direction: column;
+
+     }
+ `

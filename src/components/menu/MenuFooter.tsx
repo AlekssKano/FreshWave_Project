@@ -27,11 +27,16 @@ const Styled_Menu = styled.nav`
         gap: 30px;
         justify-content: center;
         margin-right: 15px;
+@media ${theme.media.tablet}{
+    flex-direction: column;
+
+}
 
     }`
 
 const ListItem=styled.li`
 position: relative;
+
 `
 const Link = styled.a<{ color?: string }>`
     font-family: 'Poppins', sans-serif;

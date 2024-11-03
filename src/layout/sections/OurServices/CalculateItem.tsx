@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
+import {font} from "../../../styles/Common";
+import {theme} from "../../../styles/Theme";
 
 type CalculateItemProps = {
     title: string;
@@ -26,11 +28,13 @@ const StyledCalculateItem=styled.div`
     width: 100%;                    /* Контейнер занимает всю ширину */
     border-bottom: 1px solid #ccc;  /* Линия для разделения строк */
 
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: 20px;
-    letter-spacing: 0.14em;
-    color: #000;
+    //font-family: 'Montserrat', sans-serif;
+    //font-weight: 500;
+    //font-size: 20px;
+    //letter-spacing: 0.14em;
+    //color: #000;
+    
+    ${font({family:"'Montserrat', sans-serif", weight:500,color: '#000', letterSpacing:'0.14em', Fmax:20, Fmin:14})}
     `
 const StyledPlusMinus=styled.div`
     display: flex;
@@ -45,8 +49,12 @@ const PlusMinus = styled.span`
     
     padding-left: 2px;
     padding-top: 6px;
+    
     `
 
 const Zero = styled.span`
     padding: 20px;
+    @media ${theme.media.mobile} {
+        padding: 10px;
+    }
     `

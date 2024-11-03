@@ -2,6 +2,7 @@ import React from 'react';
 import {Icon} from "../../../components/icon/icon";
 import styled from "styled-components";
 import {theme} from "../../../styles/Theme";
+import {FlexWrapper} from "../../../components/FlexWrapper";
 type BenefitsPropsType={
     iconId:string
     title:string
@@ -10,6 +11,7 @@ type BenefitsPropsType={
 export const Benefit = (props: BenefitsPropsType) => {
     return (
         <StyledBenefit>
+
             <TitleWrapper>
             <Icon iconId={props.iconId}/>
             <BenefitTitle>{props.title}</BenefitTitle>
@@ -23,13 +25,16 @@ const StyledBenefit=styled.div`
     display: flex;
     flex-direction: column;
     text-align: center;
-    width: 350px;
-    height: 304px;
+    max-width: 350px;
+    max-height: 304px;
     background-color: ${theme.colors.accent};
     border: 1px solid #1a92b5;
+    aspect-ratio: 1 / 1; /* Устанавливает квадратное соотношение сторон */
 
     padding: 20px; /* Добавляем отступы для выравнивания текста */
+    margin: 5px; /* Добавляем отступы для выравнивания текста */
     box-sizing: border-box;
+  
 `
 
 
@@ -65,3 +70,5 @@ const BenefitDescription=styled.p`
     max-width: 100%; /* Ограничиваем ширину текста для центрирования */
     
 `
+
+

@@ -1,4 +1,5 @@
 import {createGlobalStyle} from "styled-components";
+import {theme} from "./Theme";
 
 export const GlobalStyle = createGlobalStyle`
     *,
@@ -24,6 +25,11 @@ export const GlobalStyle = createGlobalStyle`
 
     section {
         margin:  0 0 60px 0;
+        
+        @media ${theme.media.tablet} {
+            margin:  0;
+            padding:  0 0 80px 0;
+        }
     }
 
     ul {

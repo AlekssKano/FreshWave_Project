@@ -5,13 +5,15 @@ import {SectionTitle} from "../../components/SectionTitle";
 import {FlexWrapper} from "../../components/FlexWrapper";
 import {Button} from "../../components/Button";
 import {Container} from "../../components/container/Container";
+import {theme} from "../../styles/Theme";
+import {font} from "../../styles/Common";
 
 export const AboutUs = () => {
     return (
         <StyledAboutUs>
             <Container>
             <SectionTitle>About Us</SectionTitle>
-            <FlexWrapper justify={'center'} direction={'row'} align={'center'}>
+            <FlexWrapper justify={'center'} direction={'row'} align={'center'} wrap={'wrap'}>
                 <Photo src={AboutUsPhoto} alt={'About Us'}/>
                 <StyledTextNButton>
                     <StyledText><p>Who We Are?</p>
@@ -48,10 +50,16 @@ const StyledAboutUs = styled.section`
 `
 const Photo = styled.img`
     border-radius: 66px;
-    width: 485px;
-    height: 520px;
-
+    max-width: 485px;
+    max-height: 520px;
+width: 50%;
     padding-top: 20px;
+
+    @media ${theme.media.tablet} {
+        width: auto;
+        width: 328px;
+        height: 316px;
+    }
 
 `
 
@@ -60,7 +68,16 @@ const StyledTextNButton = styled.div`
     text-align: start;
     padding-left: 78px;
     padding-bottom: 50px;
+    width: 50%;
 
+@media ${theme.media.tablet} {
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+
+
+
+}
 
 `
 const StyledText = styled.div`
@@ -75,4 +92,9 @@ text-align: start;
 
     padding-bottom: 14px;
     padding-top: 110px;
+
+    
+    ${font({family:'"Montserrat", sans-serif', weight:400, color:'#000',letterSpacing:'0.1em', Fmax:20, Fmin:16 })}
+    
+    
 `

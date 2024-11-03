@@ -26,5 +26,8 @@ const NameCompany=styled.span`
     font-size: 18px;
     width: 100px;
     color: ${theme.colors.accent};
+    @media ${theme.media.mobile}{
+        color:#126ABA
+    }
 
 `

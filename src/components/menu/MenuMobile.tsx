@@ -7,6 +7,7 @@ import {theme} from "../../styles/Theme";
 export const MenuMobile = (props: { menuItems: Array<string>, color?: string }) => {
     return (
         <Styled_Mobile_Menu>
+
             <BurgerButton isOpen={false}>
                 <span></span>
             </BurgerButton>
@@ -24,11 +25,13 @@ export const MenuMobile = (props: { menuItems: Array<string>, color?: string }) 
 
             </MobileMenuPopUp>
 
-            ; </Styled_Mobile_Menu>)
+             </Styled_Mobile_Menu>)
 };
 
 const Styled_Mobile_Menu = styled.nav`
-
+    position: relative; /* Относительное позиционирование для контейнера */
+    
+    
     display: none;
     @media ${theme.media.tablet} {
 
@@ -37,6 +40,7 @@ const Styled_Mobile_Menu = styled.nav`
 
 
 `
+
 
 
 const MobileMenuPopUp = styled.div<{ isOpen: boolean }>`
@@ -74,16 +78,24 @@ const MobileMenuPopUp = styled.div<{ isOpen: boolean }>`
 
 `
 const BurgerButton = styled.button<{ isOpen: boolean }>`
-    position: fixed;
-    top: -100px;
-    right: -100px;
-    width: 200px;
-    height: 200px;
-    z-index: 9999999;
-
+    //position: fixed;
+    //top: -100px;
+    //right: -100px;
+    //width: 200px;
+    //height: 200px;
+    //z-index: 9999999;
+    //
+    position: absolute; /* Теперь кнопка будет позиционироваться относительно родителя */
+    top: 0; /* Или используйте проценты для адаптации */
+    right: 40px;
+    width: clamp(40px, 10vw, 60px); /* Адаптируемая ширина */
+    height: clamp(40px, 10vw, 60px); /* Адаптируемая высота */
+    z-index: 9999;
+    
     span {
         display: block;
         width: 36px;
+
         height: 2px;
         background-color: ${theme.colors.accent};
         position: absolute;
