@@ -48,7 +48,7 @@ const PlusMinus = styled.span`
     height: 45px;
     
     padding-left: 2px;
-    padding-top: 6px;
+    padding-top: 10px;
     
     `
 

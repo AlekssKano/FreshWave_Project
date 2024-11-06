@@ -1,12 +1,12 @@
 import React from 'react';
-import {CalculateItem} from "./OurServices/CalculateItem";
+import {CalculateItem} from "./CalculateItem";
 import styled from "styled-components";
-import {SectionTitle} from "../../components/SectionTitle";
-import {FlexWrapper} from "../../components/FlexWrapper";
-import {Button} from "../../components/Button";
-import {Container} from "../../components/container/Container";
-import {theme} from "../../styles/Theme";
-import {font} from "../../styles/Common";
+import {SectionTitle} from "../../../components/SectionTitle";
+import {FlexWrapper} from "../../../components/FlexWrapper";
+import {Button} from "../../../components/Button";
+import {Container} from "../../../components/container/Container";
+import {theme} from "../../../styles/Theme";
+import {font} from "../../../styles/Common";
 
 export const Calculator = () => {
     return (

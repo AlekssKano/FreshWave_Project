@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from "styled-components";
-import AboutUsPhoto from './../../assets/images/about_us.webp'
-import {SectionTitle} from "../../components/SectionTitle";
-import {FlexWrapper} from "../../components/FlexWrapper";
-import {Button} from "../../components/Button";
-import {Container} from "../../components/container/Container";
-import {theme} from "../../styles/Theme";
-import {font} from "../../styles/Common";
+import AboutUsPhoto from '../../../assets/images/about_us.webp'
+import {SectionTitle} from "../../../components/SectionTitle";
+import {FlexWrapper} from "../../../components/FlexWrapper";
+import {Button} from "../../../components/Button";
+import {Container} from "../../../components/container/Container";
+import {theme} from "../../../styles/Theme";
+import {font} from "../../../styles/Common";
 
 export const AboutUs = () => {
     return (

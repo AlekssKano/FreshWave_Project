@@ -1,34 +1,7 @@
-import React from 'react';
+import {theme} from "../../../styles/Theme";
 import styled, {css} from "styled-components";
-import {Button} from "../Button";
-import {theme} from "../../styles/Theme";
 
-
-export const MenuMobile = (props: { menuItems: Array<string>, color?: string }) => {
-    return (
-        <Styled_Mobile_Menu>
-
-            <BurgerButton isOpen={false}>
-                <span></span>
-            </BurgerButton>
-            <MobileMenuPopUp isOpen={false}>
-                <ul>
-                    {props.menuItems.map((item, index) => {
-                        return <ListItem key={index}>
-                            <Link href={''} color={'#126ABA'}>{item}</Link>
-
-                        </ListItem>
-
-                    })}
-                </ul>
-                <Button width={'130px'} height={'35px'}>Book Now</Button>
-
-            </MobileMenuPopUp>
-
-             </Styled_Mobile_Menu>)
-};
-
-const Styled_Mobile_Menu = styled.nav`
+const Mobile_Menu = styled.nav`
     position: relative; /* Относительное позиционирование для контейнера */
     
     
@@ -78,13 +51,6 @@ const MobileMenuPopUp = styled.div<{ isOpen: boolean }>`
 
 `
 const BurgerButton = styled.button<{ isOpen: boolean }>`
-    //position: fixed;
-    //top: -100px;
-    //right: -100px;
-    //width: 200px;
-    //height: 200px;
-    //z-index: 9999999;
-    //
     position: absolute; /* Теперь кнопка будет позиционироваться относительно родителя */
     top: 0; /* Или используйте проценты для адаптации */
     right: 40px;
@@ -157,3 +123,11 @@ const Link = styled.a<{ color?: string }>`
         text-decoration: underline;
     }
 `
+
+export const S ={
+    Mobile_Menu,
+    MobileMenuPopUp,
+    Link,
+    ListItem,
+    BurgerButton
+}
