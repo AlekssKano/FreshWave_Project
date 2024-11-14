@@ -18,30 +18,42 @@ export const Calculator2 = () => {
         setTotalTime(newTotalTime);
         setTotalCost((newTotalTime / 60) * hourlyRate);
     };
-    type OnClickHandlerProps = 'reg' | 'spring' | 'bond';
+    type OnClickHandlerProps = {
+        typeCleaning: 'reg' | 'spring' | 'bond'
+        num?: number
+    }
 
     const [activeReg, setActiveReg] = useState(false);
     const [activeSpring, setActiveSpring] = useState(false);
     const [activeBond, setActiveBond] = useState(false);
     const [choosenTypeCleaningCount, setChoosenTypeCleaningCount] = useState<string>("");
+    const [resetItems, setResetItems] = useState(0);
+
+
+
 
     const onClickHandler = (props: OnClickHandlerProps) => {
-        if (props === 'reg') {  // Сравнение с 'reg'
+        setTotalTime(0);
+        setTotalCost(0);
+        if (props.typeCleaning === 'reg') {  // Сравнение с 'reg'
             setChoosenTypeCleaningCount("reg");
             setActiveReg(!activeReg)
             setActiveBond(false)
+            setResetItems(prev => prev + 1); // Увеличьте resetItems для сброса
             return setActiveSpring(false)
         }
-        if (props === 'spring') {
+        if (props.typeCleaning === 'spring') {
             setChoosenTypeCleaningCount("spring");
             setActiveReg(false)
             setActiveBond(false)
+            setResetItems(prev => prev + 1); // Увеличьте resetItems для сброса
             return setActiveSpring(!activeSpring)
         }
-        if (props === 'bond') {
+        if (props.typeCleaning === 'bond') {
             setChoosenTypeCleaningCount("bond");
             setActiveReg(false)
             setActiveBond(!activeBond)
+            setResetItems(prev => prev + 1); // Увеличьте resetItems для сброса
             return setActiveSpring(false)
 
         }
@@ -54,43 +66,50 @@ export const Calculator2 = () => {
                 <SectionTitle>House Cleaning Quote Calculator</SectionTitle>
                 <ButtonContainer>
                     <Button width={'200px'} height={'55px'} fontSize={'20px'} isActive={activeReg}
-                            onClick={() => onClickHandler('reg')}>Regular Service</Button>
+                            onClick={() => onClickHandler({typeCleaning: 'reg', num: 45})}>Regular Service</Button>
                     <Button width={'200px'} height={'55px'} fontSize={'20px'} isActive={activeSpring}
-                            onClick={() => onClickHandler('spring')}>Spring Service</Button>
+                            onClick={() => onClickHandler({typeCleaning: 'spring', num: 45})}>Spring Service</Button>
                     <Button width={'200px'} height={'55px'} fontSize={'20px'} isActive={activeBond}
-                            onClick={() => onClickHandler('bond')}>Bond Service</Button>
+                            onClick={() => onClickHandler({typeCleaning: 'bond', num: 50})}>Bond Service</Button>
                 </ButtonContainer>
                 <FlexWrapper direction={'column'} align={'center'}>
-                    <CalculateItem2
-                        title={'Kitchen'}
-                        timePerItem={15}
-                        onTimeChange={updateTotal}/>
-                    <CalculateItem2 title={'Bathroom'}
-                                    timePerItem={10}
+                    <CalculateItem2 key={resetItems + "Kitchen"}
+                                    title={'Kitchen'}
+                                    timePerItem={choosenTypeCleaningCount === 'bond' ? 180 : choosenTypeCleaningCount === 'spring' ? 120 : 35}
                                     onTimeChange={updateTotal}/>
-                    <CalculateItem2 title={'Toilet'}
-                                    timePerItem={5}
+                    <CalculateItem2 key={resetItems + "Bathroom"}
+                                    title={'Bathroom'}
+                                    timePerItem={choosenTypeCleaningCount === 'bond' ? 60 : choosenTypeCleaningCount === 'spring' ? 60 : 35}
                                     onTimeChange={updateTotal}/>
-                    <CalculateItem2 title={'Bedroom/Office'}
-                                    timePerItem={20}
+                    <CalculateItem2 key={resetItems + "Toilet"}
+                                    title={'Toilet'}
+                                    timePerItem={choosenTypeCleaningCount === 'bond' ? 30 : choosenTypeCleaningCount === 'spring' ? 20 : 15}
                                     onTimeChange={updateTotal}/>
-                    <CalculateItem2 title={'Living Area'}
-                                    timePerItem={25}
+                    <CalculateItem2 key={resetItems + "Bedroom/Office"}
+                                    title={'Bedroom/Office'}
+                                    timePerItem={choosenTypeCleaningCount === 'bond' ? 30 : choosenTypeCleaningCount === 'spring' ? 20 : 15}
                                     onTimeChange={updateTotal}/>
-                    <CalculateItem2 title={'Windows'}
-                                    timePerItem={30}
+                    <CalculateItem2 key={resetItems + "Living Area"}
+                                    title={'Living Area'}
+                                    timePerItem={choosenTypeCleaningCount === 'bond' ? 60 : choosenTypeCleaningCount === 'spring' ? 45 : 25}
                                     onTimeChange={updateTotal}/>
-                    <CalculateItem2 title={'Bed sheets'}
-                                    timePerItem={10}
+                    <CalculateItem2 key={resetItems + "Windows"}
+                                    title={'Windows'}
+                                    timePerItem={choosenTypeCleaningCount === 'bond' ? 15 : choosenTypeCleaningCount === 'spring' ? 15 : 10}
                                     onTimeChange={updateTotal}/>
-                    <CalculateItem2 title={'Oven'}
-                                    timePerItem={15}
+                    <CalculateItem2 key={resetItems + "Bed sheets"}
+                                    title={'Bed sheets'}
+                                    timePerItem={choosenTypeCleaningCount === 'bond' ? 10 : choosenTypeCleaningCount === 'spring' ? 10 : 10}
+                                    onTimeChange={updateTotal}/>
+                    <CalculateItem2 key={resetItems + "Oven"}
+                                    title={'Oven'}
+                                    timePerItem={choosenTypeCleaningCount === 'bond' ? 120 : choosenTypeCleaningCount === 'spring' ? 120 : 120}
                                     onTimeChange={updateTotal}/>
                 </FlexWrapper>
                 <StyledResult>
                     <Result>Estimated
                         time: <StyledHoursNMoney>{Math.floor(totalTime / 60)}:{totalTime % 60} hours</StyledHoursNMoney></Result>
-                    <Result>Total: <StyledHoursNMoney>${totalCost.toFixed(2)} (${hourlyRate}.00 p/h)</StyledHoursNMoney></Result>
+                    <Result>Total: <StyledHoursNMoney>${totalCost.toFixed(2)} (${choosenTypeCleaningCount === 'bond' ?50:45}.00 p/h)</StyledHoursNMoney></Result>
                 </StyledResult>
             </Container>
         </StyledCalculator>

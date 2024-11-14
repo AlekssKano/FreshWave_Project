@@ -7,6 +7,7 @@ type CalculateItemProps = {
     title: string;
 }
 export const CalculateItem = (props:CalculateItemProps) => {
+
     return (
         <StyledCalculateItem>
             {props.title}
