@@ -87,7 +87,7 @@ export const Calculator2 = () => {
                                     onTimeChange={updateTotal}/>
                     <CalculateItem2 key={resetItems + "Bedroom/Office"}
                                     title={'Bedroom/Office'}
-                                    timePerItem={choosenTypeCleaningCount === 'bond' ? 30 : choosenTypeCleaningCount === 'spring' ? 20 : 15}
+                                    timePerItem={choosenTypeCleaningCount === 'bond' ? 30 : choosenTypeCleaningCount === 'spring' ? 20 : 10}
                                     onTimeChange={updateTotal}/>
                     <CalculateItem2 key={resetItems + "Living Area"}
                                     title={'Living Area'}

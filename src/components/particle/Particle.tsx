@@ -38,7 +38,7 @@ export const Particle = () => {
                         value: { min: 30, max: 80 }, // диапазон размеров кругов
                     },
                     opacity: {
-                        value: 0.2, // прозрачность для мягкого вида
+                        value: 0.1 || 0.2, // прозрачность для мягкого вида
                     },
                     shape: {
                         type: "circle",
