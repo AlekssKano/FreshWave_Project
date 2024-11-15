@@ -8,11 +8,14 @@ import {Calculator} from "./layout/sections/calculator/Calculator";
 import {Contact} from "./layout/sections/contacts/Contact";
 import {Footer} from "./layout/footer/Footer";
 import {Calculator2} from "./layout/sections/workingCalculator/Calculator2";
+import {Particle} from "./components/particle/Particle";
+import {GoTopBtn} from "./components/goTopBtn/GoTopBtn";
 
 
 function App() {
     return (
         <div className="App">
+            <Particle/>
             <Header/>
             <Main/>
             <OurService/>
@@ -21,6 +24,7 @@ function App() {
             <Calculator2/>
             <Contact/>
             <Footer/>
+            <GoTopBtn/>
         </div>
     );
 }

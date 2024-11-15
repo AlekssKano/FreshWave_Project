@@ -9,8 +9,13 @@ import {theme} from "../../../styles/Theme";
 import {font} from "../../../styles/Common";
 
 export const AboutUs = () => {
+    const onClckHandler=()=>{
+        const targetElement = document.getElementById("contact"); // Замените "home" на нужный ID
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+        }    }
     return (
-        <StyledAboutUs>
+        <StyledAboutUs id={'aboutUs'}>
             <Container>
             <SectionTitle>About Us</SectionTitle>
             <FlexWrapper justify={'center'} direction={'row'} align={'center'} wrap={'wrap'}>
@@ -31,7 +36,7 @@ export const AboutUs = () => {
                             the
                             most affordable prices.</p>
                     </StyledText>
-                    <Button width={'200px'} height={'50px'} fontSize={'20px'}>Request a quote</Button>
+                    <Button width={'200px'} height={'50px'} fontSize={'20px'} onClick={onClckHandler}>Request a quote</Button>
 
                 </StyledTextNButton>
             </FlexWrapper>
@@ -44,8 +49,10 @@ const StyledAboutUs = styled.section`
     display: flex;
     flex-direction: column;
     text-align: center;
-    background-color: #95c1c1;
-    
+    //background-color: #95c1c1;
+    position: relative;
+
+
 
 `
 const Photo = styled.img`
@@ -60,6 +67,7 @@ width: 50%;
         width: 328px;
         height: 316px;
     }
+   
 
 `
 

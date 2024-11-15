@@ -4,6 +4,7 @@ import {theme} from "../../../styles/Theme";
 import backgroundPhoto from '../../../assets/images/mainBlur.webp'
 
 const Main = styled.section`
+    position: relative;
 
 `
 const BackgroundWrapper = styled.div`

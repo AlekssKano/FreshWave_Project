@@ -19,7 +19,7 @@ export const Contact = () => {
 
 
     return (
-        <S.Contacts>
+        <S.Contacts id={'contact'}>
             <Container>
                 <FlexWrapper direction="column" justify="center" align={'center'}>
             <SectionTitle>Contact</SectionTitle>

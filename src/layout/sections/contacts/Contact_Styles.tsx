@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 const Contacts = styled.section`
     //background-color: #d5cdcd;
+    position: relative;
+
 
 
 

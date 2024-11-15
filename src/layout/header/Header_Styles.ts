@@ -7,7 +7,8 @@ const Header = styled.header`
     //top: 0;
     //left: 0;
     //right: 0;
-    //z-index: 9999;
+
+
     @media ${theme.media.mobile}{  
         background-color: #51B9D9;
         
@@ -28,7 +29,6 @@ const Header = styled.header`
 `
 const ButtonPartHeader = styled.div`
     display: block;
-    border: 1px solid #fb00e3;
     @media ${theme.media.tablet} {
         display: none;
     }

@@ -25,7 +25,7 @@ export const Benefits = () => {
 };
 
 const StyledBenefits = styled.section`
-    background-color: #9c82b8;
+    //background-color: #9c82b8;
     //text-align: center;
     //height: 80vh;
     display: flex;

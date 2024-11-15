@@ -9,5 +9,4 @@ max-width: 1170px;
     margin: 0 auto;
     
     
-   outline:1px solid red;
 `

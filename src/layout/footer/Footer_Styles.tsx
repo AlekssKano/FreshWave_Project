@@ -7,6 +7,8 @@ import {font} from "../../styles/Common";
 const Footer = styled.footer`
     background-color: #85C5E9; /* Голубой цвет фона */
     padding: 20px;
+    position: relative;
+
     //color:${theme.colors.secondaryText}
 `;
 

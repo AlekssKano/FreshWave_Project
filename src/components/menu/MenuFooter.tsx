@@ -1,16 +1,16 @@
 import React from 'react';
 import styled from "styled-components";
-import {Button} from "../Button";
 import {theme} from "../../styles/Theme";
+import {items} from "./Desktop_Menu/DesktopMenu";
+import {Link} from "react-scroll";
 
-
-export const MenuFooter = (props: { menuItems: Array<string>, color?:string }) => {
+export const MenuFooter = (props: { color?:string }) => {
     return (
         <Styled_Menu>
             <ul>
-                {props.menuItems.map((item, index) => {
+                {items.map((item, index) => {
                     return <ListItem key={index}>
-                        <Link href={''} color={props.color}>{item}</Link>
+                        <NavLink to={item.href} smooth={true} color={props.color}>{item.title}</NavLink>
 
                     </ListItem>
                 })}
@@ -38,7 +38,7 @@ const ListItem=styled.li`
 position: relative;
 
 `
-const Link = styled.a<{ color?: string }>`
+const NavLink = styled(Link)<{ color?: string }>`
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 18px;

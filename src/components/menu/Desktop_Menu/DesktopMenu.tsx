@@ -1,16 +1,33 @@
 import React from 'react';
-import styled from "styled-components";
-import {Button} from "../../Button";
-import {theme} from "../../../styles/Theme";
 import {S} from './Desktop_Styles_Menu'
+// const items = ['Home', 'About Us', 'Cleaning Service', 'Contact']
 
-export const DesktopMenu: React.FC<{ menuItems: Array<string>, color?:string }> = (props: { menuItems: Array<string>, color?:string }) => {
+export const items = [
+    {
+        title:'Home',
+        href:'home'
+    },
+    {
+        title:'About Us',
+        href:'aboutUs'
+    },
+    {
+        title:'Cleaning Service',
+        href:'cleaningService'
+    },
+    {
+        title:'Contact',
+        href:'contact'
+    },
+
+]
+export const DesktopMenu: React.FC<{ color?:string }> = (props: { color?:string }) => {
     return (
         <S.Desktop_Menu >
             <ul>
-                {props.menuItems.map((item, index) => {
+                {items.map((item, index) => {
                     return <S.ListItem key={index}>
-                        <S.Link href={''} color={props.color}>{item}</S.Link>
+                        <S.NavLink to={item.href} smooth={true} color={props.color}>{item.title}</S.NavLink>
 
                     </S.ListItem>
                 })}

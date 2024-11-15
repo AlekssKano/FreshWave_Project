@@ -2,11 +2,12 @@ import React from 'react';
 import {Icon} from "../icon/icon";
 import styled from "styled-components";
 import {theme} from "../../styles/Theme";
+import {animateScroll as scroll} from "react-scroll/modules";
 
 export const Logo = () => {
     return (
 
-            <StyledLogo href=''>
+            <StyledLogo>
                 <Icon iconId={'logo'} width={'80'} height={'80'} viewBox={'0 0 80 80'}/>
                 <NameCompany>FreshWave  Cleaning</NameCompany>
             </StyledLogo>

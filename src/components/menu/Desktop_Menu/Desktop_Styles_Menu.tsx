@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {theme} from "../../../styles/Theme";
+import {Link} from "react-scroll";
 
 const Desktop_Menu  = styled.nav`
     ul {
@@ -19,7 +20,7 @@ const Desktop_Menu  = styled.nav`
 const ListItem=styled.li`
 position: relative;
 `
-const Link = styled.a<{ color?: string }>`
+const NavLink = styled(Link)<{ color?: string }>`
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 18px;
@@ -35,5 +36,5 @@ const Link = styled.a<{ color?: string }>`
 export const S ={
     Desktop_Menu,
     ListItem,
-    Link
+    NavLink
 }

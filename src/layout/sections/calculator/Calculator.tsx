@@ -40,6 +40,8 @@ export const Calculator = () => {
 const StyledCalculator = styled.section`
     min-height: 100vh;
     text-align: center;
+    position: relative;
+
 
 
 `

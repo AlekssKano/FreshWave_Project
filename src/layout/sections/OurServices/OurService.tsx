@@ -12,7 +12,7 @@ import {font} from "../../../styles/Common";
 
 export const OurService = () => {
     return (
-        <OurServiceStyled>
+        <OurServiceStyled id={'cleaningService'}>
             <Container>
                 <SectionPlace>
                     <SectionTitle>Our cleaning services</SectionTitle>
@@ -45,7 +45,9 @@ const OurServiceStyled = styled.section`
     justify-content: space-around;
     align-items: center;
     text-align: center;
-    background-color: #ade6d2;
+    //background-color: #ade6d2;
+    position: relative;
+
 
 
 `

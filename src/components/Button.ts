@@ -7,11 +7,12 @@ type ButtonProps={
     fontSize?:string
     borderRadius?:string
     isActive?: boolean; // Новый пропс для контроля активности
-
+onClick?:()=>void;
 }
 
 export const Button = styled.button<ButtonProps>`
-
+    position: relative;
+    z-index: 9999 !important;
     width: ${({width}) => width || "120px"};
     height: ${({height}) => height || "30px"};
     background-color: ${({isActive}) => isActive ? theme.colors.accent : theme.colors.accent}; // Изменение фона при активной кнопке
@@ -30,4 +31,5 @@ export const Button = styled.button<ButtonProps>`
     &:active {
         transform: scale(0.98); /* Эффект нажатия */
     }
+    
 `

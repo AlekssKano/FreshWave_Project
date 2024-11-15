@@ -11,14 +11,19 @@ type ServicePropsType={
     src: string,
 }
 export const Service = (props:ServicePropsType) => {
+    const onClckHandler=()=>{
+        const targetElement = document.getElementById("contact");
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+        }    }
     return (
-        <StyledService>
+        <StyledService >
         <FlexWrapper direction={'column'} align={'center'} justify={'center'}>
             <Photo src={props.src}/>
 <ServiceTitle>{props.title}</ServiceTitle>
             <ServiceDescription>{props.description}</ServiceDescription>
             <ButtonPart>
-                <Button color={'primary'} width={'190px'} height={'45px'} fontSize={'20px'}>Request a quote</Button>
+                <Button color={'primary'} width={'190px'} height={'45px'} fontSize={'20px'} onClick={onClckHandler}>Request a quote</Button>
 
             </ButtonPart>
         </FlexWrapper>
@@ -28,8 +33,11 @@ export const Service = (props:ServicePropsType) => {
 const StyledService=styled.div`
     //width: 30%
     align-items: center;
-    
-    
+    position: relative;
+z-index: 9999 !important;
+
+
+
 
 `
 const Photo = styled.img`
@@ -42,6 +50,12 @@ const Photo = styled.img`
 
     aspect-ratio: 1 / 1; /* Устанавливает квадратное соотношение сторон */
     object-fit: cover;
+
+    transition: box-shadow 0.5s ease;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    &:hover {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
 
 `
 const ServiceTitle = styled.h4`

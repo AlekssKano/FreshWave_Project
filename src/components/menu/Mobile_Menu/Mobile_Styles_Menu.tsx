@@ -1,5 +1,6 @@
 import {theme} from "../../../styles/Theme";
 import styled, {css} from "styled-components";
+import {Link} from "react-scroll";
 
 const Mobile_Menu = styled.nav`
     position: relative; /* Относительное позиционирование для контейнера */
@@ -54,9 +55,9 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
     position: absolute; /* Теперь кнопка будет позиционироваться относительно родителя */
     top: 0; /* Или используйте проценты для адаптации */
     right: 40px;
-    width: clamp(40px, 10vw, 60px); /* Адаптируемая ширина */
-    height: clamp(40px, 10vw, 60px); /* Адаптируемая высота */
-    z-index: 9999;
+    width: clamp(40px, 30vw, 60px); /* Адаптируемая ширина */
+    height: clamp(40px, 30vw, 60px); /* Адаптируемая высота */
+    z-index: 999999;
     
     span {
         display: block;
@@ -65,7 +66,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
         height: 2px;
         background-color: ${theme.colors.accent};
         position: absolute;
-        left: 40px;
+        left: 30px;
         bottom: 50px;
 
         ${props => props.isOpen && css<{ isOpen: boolean }>`
@@ -111,7 +112,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
 const ListItem = styled.li`
     position: relative;
 `
-const Link = styled.a<{ color?: string }>`
+const NavLink = styled(Link)<{ color?: string }>`
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 18px;
@@ -127,7 +128,8 @@ const Link = styled.a<{ color?: string }>`
 export const S ={
     Mobile_Menu,
     MobileMenuPopUp,
-    Link,
+    NavLink,
     ListItem,
     BurgerButton
+
 }

@@ -8,16 +8,21 @@ import {MenuMobile} from "../../components/menu/Mobile_Menu/MenuMobile";
 import {S} from './Header_Styles'
 
 
-const items = ['Home', 'About Us', 'Cleaning Service', 'Contact']
+
 export const Header: React.FC = () => {
+    const onClckHandler=()=>{
+        const targetElement = document.getElementById("contact"); // Замените "home" на нужный ID
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+        }    }
     return (
-        <S.Header>
+        <S.Header id={'home'}>
             <Container>
                 <FlexWrapper justify={'space-between'} align={'center'}>
                     <Logo/>
-                    <DesktopMenu menuItems={items}/>
-                    <MenuMobile menuItems={items}/>
-                    <S.ButtonPartHeader><Button width={'130px'} height={'35px'}>Book Now</Button></S.ButtonPartHeader>
+                    <DesktopMenu/>
+                    <MenuMobile/>
+                    <S.ButtonPartHeader><Button width={'130px'} height={'35px'} onClick={onClckHandler} >Book Now</Button></S.ButtonPartHeader>
                 </FlexWrapper>
             </Container>
         </S.Header>
