@@ -31,6 +31,14 @@ if (!form.current) return
             .then(
                 () => {
                     console.log('SUCCESS!');
+                    // Вызов Google Tag для отслеживания конверсии
+                    if (window.gtag) {
+                        window.gtag('event', 'conversion', {
+                            'send_to': 'AW-16863372114/2JBuCNq3pZsaENLGiuk-',
+                            'value': 1.0,
+                            'currency': 'AUD'
+                        });
+                    }
                 },
                 (error) => {
                     console.log('FAILED...', error.text);
